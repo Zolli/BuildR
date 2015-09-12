@@ -407,7 +407,7 @@ class Container implements ContainerInterface {
         foreach($objectReflector->getProperties() as $objectProperty) {
             $comment = $objectProperty->getDocComment();
 
-            if(strpos($comment, '@Wire') !== false) {
+            if(strpos($comment, '@Wire') !== FALSE) {
                 $className = $this->extractClassFromComment($comment);
 
                 $objectProperty->setAccessible(TRUE);

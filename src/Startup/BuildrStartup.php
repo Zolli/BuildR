@@ -4,7 +4,6 @@ use buildr\Loader\ClassLoader;
 use buildr\Loader\classMapClassLoader;
 use buildr\Loader\PSR4ClassLoader;
 use buildr\Startup\Exception\StartupException;
-use buildr\Utils\Reflection\ReflectionUtils;
 use Closure;
 
 /**

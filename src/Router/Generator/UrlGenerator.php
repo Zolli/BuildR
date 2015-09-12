@@ -2,8 +2,6 @@
 
 use buildr\Http\Request\RequestInterface;
 use buildr\Router\Map\RouteMap;
-use buildr\Router\Route\Route;
-use buildr\Router\Exception\RouteNotFoundException;
 
 /**
  * Route generator

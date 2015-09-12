@@ -2,6 +2,7 @@
 
 use buildr\Http\Request\RequestInterface;
 use buildr\Router\Route\Route;
+use buildr\Router\Rule\RuleInterface;
 
 /**
  * Secure rule

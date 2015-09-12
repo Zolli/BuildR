@@ -6,7 +6,6 @@ use buildr\Http\Constants\HttpResponseCode;
 use buildr\Http\Response\Facade\Response;
 use buildr\Router\Route\Route;
 use buildr\Router\Router;
-use buildr\Router\RouterInterface;
 use buildr\Router\Rule\AcceptRule;
 use buildr\Router\Rule\AllowRule;
 use buildr\Http\Response\ContentType\HtmlContentType;

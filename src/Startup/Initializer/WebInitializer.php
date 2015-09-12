@@ -42,7 +42,6 @@ class WebInitializer extends BaseInitializer {
 
         //Environment detection
         BuildrEnvironment::detectEnvironment();
-        $environment = BuildrEnvironment::getEnv();
 
         //Register additional providers, that exist only in web requests
         $this

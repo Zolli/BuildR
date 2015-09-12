@@ -1,6 +1,7 @@
 <?php namespace buildr\Filesystem;
 
 use buildr\ServiceProvider\ServiceProviderInterface;
+use buildr\Filesystem\FilesystemInterface;
 
 /**
  * Service provider for Filesystem class

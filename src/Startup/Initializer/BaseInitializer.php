@@ -4,7 +4,6 @@ use buildr\Startup\Initializer\InitializerInterface;
 use buildr\Application\Application;
 use buildr\Config\Config;
 use buildr\Container\Container;
-use buildr\Container\Repository\InMemoryServiceRepository;
 use buildr\Loader\classLoader;
 use buildr\ServiceProvider\ServiceProvider;
 

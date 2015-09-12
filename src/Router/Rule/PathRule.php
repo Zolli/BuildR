@@ -3,6 +3,7 @@
 use buildr\Http\Request\RequestInterface;
 use buildr\Router\Rule\AttributeMatchingTrait;
 use buildr\Router\Route\Route;
+use buildr\Router\Rule\RuleInterface;
 
 /**
  * Path rule

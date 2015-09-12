@@ -1,6 +1,7 @@
 <?php namespace buildr\Router\Rule; 
 
 use \Iterator;
+use buildr\Router\Rule\RuleInterface;
 
 /**
  * Rule Iterator

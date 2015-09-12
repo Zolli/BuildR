@@ -1,20 +1,20 @@
-[![Build Status](http://ci.zolli.hu/buildStatus/icon?job=BuildR)](http://ci.zolli.hu/job/BuildR/) [![Code Coverage](http://zolli.hu/buildstatus/buildr.svg)](http://ci.zolli.hu/job/BuildR/) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/ceb36416-12c1-4da8-9567-e460a751bc0c/mini.png)](https://insight.sensiolabs.com/projects/ceb36416-12c1-4da8-9567-e460a751bc0c)
+[![Build Status](http://ci.zolli.hu/buildStatus/icon?job=BuildR)](http://ci.zolli.hu/job/BuildR/) [![Dependency status](https://www.versioneye.com/user/projects/555a272f634daa30fb000002/badge.svg?style=flat)]() [![Code Coverage](http://status.buildr-framework.io/buildstatus/status.php)](http://ci.zolli.hu/job/BuildR) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Zolli/BuildR/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Zolli/BuildR/?branch=master) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/ceb36416-12c1-4da8-9567-e460a751bc0c/mini.png)](https://insight.sensiolabs.com/projects/ceb36416-12c1-4da8-9567-e460a751bc0c) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Zolli/BuildR?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # BuildR
-### PHP-based continuous integration server
+### Highly experimental PHP framework
 
-BuildR is a highly experimental project, its not built top of any framework, it uses own framework with many-many cool things inside. When its finished, it be a modular, extendable CI server (like Jenkins).
+BuildR is a highly experimental project, its started to be a CI server written in PHP, but while time I decided to write a full framework before start development of the real project.
 
 Here is the list for the feature plans
  
- * Projet based workflows
- * Rich set of extension
- * Charts and reports
- * Automatic reporting
- * Many utility for easy connectivity (triggers and responses)
- * Deployment pipelines
- * Status pages
- * Live notifications and build view
+ * Awesome syntax
+ * Clean code
+ * Highly covered with tests
+
+### Contribution
+
+Currently i'am the only developer of this project, but i welcome contribution (But not on Github!)
+If you want to contribute to this project read the **CONTRIBUTING.md** on this repository index.
 
 ## Used tools
 
@@ -24,31 +24,22 @@ This project use many other tools to make proper workflow. Here is the list:
  * Continuous integration: [Jenkins](http://jenkins-ci.org/)
  * Code quality controll: [SLInsight](https://insight.sensiolabs.com/)
  * Development workflow: [Arcanist](http://phabricator.org/)
- * Build automatization: [Ant](http://ant.apache.org/)
+ * Build automation: [Ant](http://ant.apache.org/)
  * Dependency management: [Composer](https://getcomposer.org/)
  * Unit testing: [PHPUnit](https://phpunit.de/)
  * Code quality: [PHPcpd](https://github.com/sebastianbergmann/phpcpd)
  * Code quality: [PHPLoc](https://github.com/sebastianbergmann/phploc)
- * Code quality: [PHP CS Fixer](http://cs.sensiolabs.org/)
+ * Code quality: [PHP CodeSniffer](https://www.squizlabs.com/php-codesniffer)
+ * Software metrics: [Pdepend](http://pdepend.org/)
  * Documentation: [Apigen](http://www.apigen.org/)
-
-
-## Other things
-
-### Contribution
-
-Currently i'am the only developer of this project, but i welcome contribution (But not on Github!) If you want to contribut to this project contact me, and i give you access to my software development platform. I only use github for a repository mirror.
-
-### Bugs and feature requests
-
-If you use this project, and found a bug please file an issue on [Phabricator](http://phabricator.org/) or open an issue in Github.
 
 ### License
 
 BuildR is licensed under GPL v3 ([Read](https://raw.githubusercontent.com/Zolli/BuildR/master/LICENSE.md))
+[![License image](http://gplv3.fsf.org/gplv3-88x31.png)]()
 
 ### Thanks
 
-All the package or tool author.
+Huge thanks all the package and tool author
 
-This project and the worklfow is highly inspirated by Phabricator team. Thanks to all of us!
+This workflow is highly inspired by Phabricator team. Thanks to all of us!

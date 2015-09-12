@@ -3,6 +3,7 @@
 use buildr\Filesystem\Types\Directory;
 use buildr\Filesystem\Types\File;
 use buildr\Utils\StringUtils;
+use buildr\Filesystem\FilesystemInterface;
 
 /**
  * Filesystem component

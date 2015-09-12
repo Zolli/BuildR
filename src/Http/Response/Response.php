@@ -4,7 +4,6 @@ use buildr\Http\Constants\HttpProtocolVersion;
 use buildr\Http\Header\HeaderBag;
 use buildr\Http\Header\ResponseHeaderBag;
 use buildr\Http\Constants\HttpResponseCode;
-use buildr\Http\Response\ContentType\Encoder\JsonContentEncoder;
 use buildr\Http\Response\ContentType\HtmlContentType;
 use buildr\Http\Response\ContentType\HttpContentTypeInterface;
 use buildr\Http\Response\ContentType\JsonContentType;
