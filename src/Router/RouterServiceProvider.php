@@ -1,6 +1,5 @@
 <?php namespace buildr\Router;
 
-use buildr\Application\Application;
 use buildr\Router\RouterInterface;
 use buildr\ServiceProvider\ServiceProviderInterface;
 
@@ -37,7 +36,9 @@ class RouterServiceProvider implements ServiceProviderInterface {
      * @return NULL|array
      */
     public function provides() {
-        return NULL;
+        return [
+            RouterInterface::class,
+        ];
     }
 
     /**
