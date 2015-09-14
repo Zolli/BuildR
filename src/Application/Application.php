@@ -90,6 +90,8 @@ class Application {
      * @param \buildr\Router\Router $router
      *
      * @return \buildr\Router\Route\Route|FALSE
+     *
+     * @codeCoverageIgnore
      */
     private function runRouteMatcher(Router $router) {
         $matcher = $router->getMatcher();
@@ -115,6 +117,8 @@ class Application {
      * @param callable|string $middleware
      * @param \buildr\Router\Route\Route $route
      * @param \buildr\Http\Request\RequestInterface $request
+     *
+     * @codeCoverageIgnore
      */
     private function callRouteMiddleware($middleware, $route, $request) {
         if(is_string($middleware)) {
@@ -132,6 +136,8 @@ class Application {
      * the routing registration.
      *
      * @return \buildr\Router\RouterInterface
+     *
+     * @codeCoverageIgnore
      */
     private function registerRoutes() {
         $applicationRouterClass = $this->appNamespacePrefix . 'Core\Http\Routing';
@@ -154,6 +160,8 @@ class Application {
      * @param \buildr\Router\Route\Route $route
      *
      * @return mixed
+     *
+     * @codeCoverageIgnore
      */
     private function callRouteHandler(Route $route) {
         $handler = $route->handler;
@@ -174,6 +182,8 @@ class Application {
      * @param \buildr\Router\Router $router
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     private function getFailedHandler(Router $router) {
         if($router->hasFailedHandler()) {
