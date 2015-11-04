@@ -99,6 +99,8 @@ class Router {
      * Set tha route name that called when the route handling is not matched
      *
      * @param string $name
+     *
+     * @codeCoverageIgnore
      */
     public function setFailedHandlerName($name) {
         $this->failedHandler = $name;
@@ -127,6 +129,8 @@ class Router {
      * Set the router base path
      *
      * @param string|NULL $basePath
+     *
+     * @codeCoverageIgnore
      */
     public function setBasePath($basePath) {
         if(!empty($basePath)) {

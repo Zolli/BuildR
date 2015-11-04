@@ -33,7 +33,7 @@ class RequestTest extends BuildRTestCase {
     public function setUp() {
         $this->request = new Request();
 
-        $dummyData = $this->getDefaultData();
+        $dummyData = self::getDefaultData();
 
         $this->request->createFromGlobals(
             $dummyData['server'],
@@ -47,7 +47,7 @@ class RequestTest extends BuildRTestCase {
     public function testPostParameters() {
         //All getters
         $this->assertCount(2, $this->request->getAllPostParam());
-        $this->assertEquals($this->getDefaultData()['post'], $this->request->getAllPostParam());
+        $this->assertEquals(self::getDefaultData()['post'], $this->request->getAllPostParam());
 
         //*Has methods
         $this->assertTrue($this->request->hasPostParam('param'));
@@ -62,7 +62,7 @@ class RequestTest extends BuildRTestCase {
     public function testQueryParameters() {
         //All getters
         $this->assertCount(1, $this->request->getAllQueryParam());
-        $this->assertEquals($this->getDefaultData()['query'], $this->request->getAllQueryParam());
+        $this->assertEquals(self::getDefaultData()['query'], $this->request->getAllQueryParam());
 
         //*Has methods
         $this->assertTrue($this->request->hasQueryParam('a'));
@@ -77,7 +77,7 @@ class RequestTest extends BuildRTestCase {
     public function testCookies() {
         //All getters
         $this->assertCount(1, $this->request->getAllCookie());
-        $this->assertEquals($this->getDefaultData()['cookie'], $this->request->getAllCookie());
+        $this->assertEquals(self::getDefaultData()['cookie'], $this->request->getAllCookie());
 
         //*Has methods
         $this->assertTrue($this->request->hasCookie('testCookie'));
@@ -107,7 +107,7 @@ class RequestTest extends BuildRTestCase {
     public function testGlobals() {
         //All getters
         $this->assertCount(5, $this->request->getAllGlobal());
-        $this->assertEquals($this->getDefaultData()['server'], $this->request->getAllGlobal());
+        $this->assertEquals(self::getDefaultData()['server'], $this->request->getAllGlobal());
 
         //*Has methods
         $this->assertTrue($this->request->hasGlobal('SERVER_PORT'));
@@ -138,7 +138,7 @@ class RequestTest extends BuildRTestCase {
 
     public function testHeaderDetection() {
         $closure = $this->getClosureForMethod(Request::class, 'collectHeaders');
-        $defaults = $this->getDefaultData()['server'];
+        $defaults = self::getDefaultData()['server'];
 
         //Defaults
         $resultDefaults = call_user_func_array($closure, [$defaults]);
@@ -159,7 +159,7 @@ class RequestTest extends BuildRTestCase {
         $this->assertEquals($expectationWithContent, $resultWithContent);
     }
 
-    private function getDefaultData() {
+    public static function getDefaultData() {
         return [
             'server' => [
                 'HTTP_HOST' => 'http://test.tld',

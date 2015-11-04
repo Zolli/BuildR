@@ -167,6 +167,8 @@ class RouteMap implements IteratorAggregate {
      * @param mixed $handler
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     public function any($name, $path, $handler = NULL) {
         $route = $this->route($name, $path, $handler);
@@ -183,6 +185,8 @@ class RouteMap implements IteratorAggregate {
      * @param mixed $handler
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     public function get($name, $path, $handler = NULL) {
         $route = $this->route($name, $path, $handler);
@@ -199,6 +203,8 @@ class RouteMap implements IteratorAggregate {
      * @param mixed $handler
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     public function delete($name, $path, $handler = NULL) {
         $route = $this->route($name, $path, $handler);
@@ -215,6 +221,8 @@ class RouteMap implements IteratorAggregate {
      * @param mixed $handler
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     public function head($name, $path, $handler = NULL) {
         $route = $this->route($name, $path, $handler);
@@ -231,6 +239,8 @@ class RouteMap implements IteratorAggregate {
      * @param mixed $handler
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     public function options($name, $path, $handler = NULL) {
         $route = $this->route($name, $path, $handler);
@@ -247,6 +257,8 @@ class RouteMap implements IteratorAggregate {
      * @param mixed $handler
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     public function patch($name, $path, $handler = NULL) {
         $route = $this->route($name, $path, $handler);
@@ -263,6 +275,8 @@ class RouteMap implements IteratorAggregate {
      * @param mixed $handler
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     public function post($name, $path, $handler = NULL) {
         $route = $this->route($name, $path, $handler);
@@ -279,6 +293,8 @@ class RouteMap implements IteratorAggregate {
      * @param mixed $handler
      *
      * @return \buildr\Router\Route\Route
+     *
+     * @codeCoverageIgnore
      */
     public function put($name, $path, $handler = NULL) {
         $route = $this->route($name, $path, $handler);

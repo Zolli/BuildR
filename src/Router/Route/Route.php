@@ -20,15 +20,16 @@ use buildr\Router\Exception\ImmutablePropertyException;
  * @property-read string $namePrefix
  * @property-read string $pathPrefix
  * @property-read string $host
+ * @property-read mixed $handler
  * @property-read array $defaults Default values for attributes.
  * @property-read array $attributes Attribute values added by the rules.
  * @property-read array $tokens Placeholder token name and regex.
  * @property-read string $wildcard The name of the wildcard token.
- * @property-read array $accept
+ * @property-read array $accepts
  * @property-read array $extras
  * @property-read bool $secure
  * @property-read array $allows
- * @property-read bool $routeable
+ * @property-read bool $isRouteable
  * @property-read string $failedRule
  * @property-read array $middlewares
  *
@@ -106,9 +107,9 @@ class Route {
     protected $isRouteable = TRUE;
 
     /**
-     * @type bool|NULL
+     * @type bool
      */
-    protected $secure;
+    protected $secure = FALSE;
 
     /**
      * @type string|NULL
@@ -210,6 +211,8 @@ class Route {
      * @param string $failedRule
      *
      * @return $this
+     *
+     * @codeCoverageIgnore
      */
     public function failedRule($failedRule) {
         $this->failedRule = $failedRule;
@@ -223,12 +226,10 @@ class Route {
      * @param mixed $handler
      *
      * @return $this
+     *
+     * @codeCoverageIgnore
      */
     public function handler($handler) {
-        if($handler === NULL) {
-            $handler = $this->name;
-        }
-
         $this->handler = $handler;
 
         return $this;
@@ -367,14 +368,20 @@ class Route {
      * Add a new middleware to the route
      *
      * @param string|array $middleware
-     * @param bool $override
+     * @param bool $override Ovverride the existing middlewares of this route
+     *
+     * @return $this;
      */
     public function middleware($middleware, $override = FALSE) {
         if($override) {
             $this->middlewares = $middleware;
+
+            return $this;
         }
 
         $this->middlewares = array_merge($this->middlewares, (array) $middleware);
+
+        return $this;
     }
 
 }
