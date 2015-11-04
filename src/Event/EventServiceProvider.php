@@ -1,6 +1,7 @@
 <?php namespace buildr\Event;
 
 use buildr\ServiceProvider\ServiceProviderInterface;
+use buildr\Container\ContainerInterface;
 
 /**
  * Event service provider
@@ -20,9 +21,11 @@ class EventServiceProvider implements ServiceProviderInterface {
     /**
      * Returns an object that be registered to registry
      *
+     * @param \buildr\Container\ContainerInterface $container
+     *
      * @return Object
      */
-    public function register() {
+    public function register(ContainerInterface $container) {
         return new Event();
     }
 

@@ -1,4 +1,5 @@
 <?php namespace buildr\ServiceProvider;
+use buildr\Container\ContainerInterface;
 
 /**
  * Interface for ServiceProvider classes
@@ -18,9 +19,11 @@ interface ServiceProviderInterface {
     /**
      * Returns an object that be registered to registry
      *
+     * @param \buildr\Container\ContainerInterface $container
+     *
      * @return Object
      */
-    public function register();
+    public function register(ContainerInterface $container);
 
     /**
      * Return an array that contains interface bindings that

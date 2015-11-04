@@ -2,6 +2,7 @@
 
 use buildr\Config\Source\PHPConfigSource;
 use buildr\ServiceProvider\ServiceProviderInterface;
+use buildr\Container\ContainerInterface;
 
 /**
  * Configuration service provider
@@ -23,9 +24,11 @@ class ConfigServiceProvider implements ServiceProviderInterface {
     /**
      * Returns an object that be registered to registry
      *
+     * @param \buildr\Container\ContainerInterface $container
+     *
      * @return Object
      */
-    public function register() {
+    public function register(ContainerInterface $container) {
         $mainSource = new PHPConfigSource();
 
         return new Config($mainSource);

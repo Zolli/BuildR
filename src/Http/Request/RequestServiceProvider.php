@@ -1,5 +1,6 @@
 <?php namespace buildr\Http\Request;
 
+use buildr\Container\ContainerInterface;
 use buildr\Http\Request\RequestInterface;
 use buildr\ServiceProvider\ServiceProviderInterface;
 
@@ -21,9 +22,11 @@ class RequestServiceProvider implements ServiceProviderInterface {
     /**
      * Returns an object that be registered to registry
      *
+     * @param \buildr\Container\ContainerInterface $container
+     *
      * @return Object
      */
-    public function register() {
+    public function register(ContainerInterface $container) {
         $request = new Request();
         $request->createFromGlobals($_SERVER, $_COOKIE, $_GET, $_POST, $_FILES);
 

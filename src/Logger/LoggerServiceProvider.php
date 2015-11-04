@@ -5,6 +5,7 @@ use buildr\Logger\Formatter\LineFormatter;
 use buildr\Logger\Handler\StdOutHandler;
 use Psr\Log\LoggerInterface;
 use buildr\ServiceProvider\ServiceProviderInterface;
+use buildr\Container\ContainerInterface;
 
 /**
  * Service Provider for Logger
@@ -26,9 +27,11 @@ class LoggerServiceProvider implements ServiceProviderInterface {
     /**
      * Returns an object that be registered to registry
      *
+     * @param \buildr\Container\ContainerInterface $container
+     *
      * @return Object
      */
-    public function register() {
+    public function register(ContainerInterface $container) {
         $logger = new Logger('buildrLogger');
 
         $stdOutHandler = new StdOutHandler();

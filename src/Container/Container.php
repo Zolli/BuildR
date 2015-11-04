@@ -433,7 +433,8 @@ class Container implements ContainerInterface {
      * @param \buildr\ServiceProvider\ServiceProviderInterface $provider
      */
     public function register(ServiceProviderInterface $provider) {
-        $this->instance($provider->getBindingName(), $provider->register());
+        $container = $this->get('container');
+        $this->instance($provider->getBindingName(), $provider->register($container));
 
         if(($aliases = $provider->provides()) !== NULL) {
             foreach($aliases as $alias) {

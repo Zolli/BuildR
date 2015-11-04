@@ -1,6 +1,7 @@
 <?php namespace buildr\tests\serviceProvider\dummy;
 
 use buildr\ServiceProvider\ServiceProviderInterface;
+use buildr\Container\ContainerInterface;
 
 /**
  * Dummy test class
@@ -20,9 +21,11 @@ class dummyProviderTwo implements ServiceProviderInterface {
     /**
      * Returns an object that be registered to registry
      *
+     * @param \buildr\Container\ContainerInterface $container
+     *
      * @return Object
      */
-    public function register() {
+    public function register(ContainerInterface $container) {
         return new \stdClass();
     }
 

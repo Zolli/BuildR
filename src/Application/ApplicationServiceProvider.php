@@ -1,6 +1,7 @@
 <?php namespace buildr\Application;
 
 use buildr\ServiceProvider\ServiceProviderInterface;
+use buildr\Container\ContainerInterface;
 
 /**
  * Application service provider
@@ -22,9 +23,11 @@ class ApplicationServiceProvider implements ServiceProviderInterface {
     /**
      * Returns an object that be registered to registry
      *
+     * @param \buildr\Container\ContainerInterface $container
+     *
      * @return Object
      */
-    public function register() {
+    public function register(ContainerInterface $container) {
         return new Application();
     }
 
