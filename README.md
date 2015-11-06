@@ -1,4 +1,11 @@
-[![Build Status](http://ci.zolli.hu/buildStatus/icon?job=BuildR)](http://ci.zolli.hu/job/BuildR/) [![Dependency status](https://www.versioneye.com/user/projects/555a272f634daa30fb000002/badge.svg?style=flat)]() [![Code Coverage](http://status.buildr-framework.io/buildstatus/status.php)](http://ci.zolli.hu/job/BuildR) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Zolli/BuildR/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Zolli/BuildR/?branch=master) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/ceb36416-12c1-4da8-9567-e460a751bc0c/mini.png)](https://insight.sensiolabs.com/projects/ceb36416-12c1-4da8-9567-e460a751bc0c) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Zolli/BuildR?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](http://ci.zolli.hu/buildStatus/icon?job=BuildR)](http://ci.zolli.hu/job/BuildR/) 
+[![Code Coverage](http://status.buildr-framework.io/buildstatus/status.php)](http://ci.zolli.hu/job/BuildR) 
+[![Code Coverage](http://status.buildr-framework.io/buildstatus/status.php?type=tests)](http://ci.zolli.hu/job/BuildR) 
+[![Code Coverage](http://status.buildr-framework.io/buildstatus/status.php?type=crap)](http://ci.zolli.hu/job/BuildR) 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Zolli/BuildR/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Zolli/BuildR/?branch=master) 
+[![Dependency status](https://www.versioneye.com/user/projects/555a272f634daa30fb000002/badge.svg?style=flat)]() 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/ceb36416-12c1-4da8-9567-e460a751bc0c/mini.png)](https://insight.sensiolabs.com/projects/ceb36416-12c1-4da8-9567-e460a751bc0c) 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Zolli/BuildR?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # BuildR
 ### Highly experimental PHP framework
