@@ -1,15 +1,14 @@
 <?php namespace buildr\tests\router;
 
+use buildr\tests\Buildr_TestCase as BuildrTestCase;
 use buildr\Application\Application;
 use buildr\Http\Request\Request;
 use buildr\Router\Route\Route;
 use buildr\Router\Router;
-use buildr\tests\Buildr_TestCase as BuildrTestCase;
 use buildr\Router\Map\RouteMap;
 use buildr\Router\Matcher\RouteMatcher;
 use buildr\Router\Generator\UrlGenerator;
 use buildr\tests\Http\Request\RequestTest;
-use buildr\Router\Exception\ImmutablePropertyException;
 
 class routerTest extends BuildrTestCase {
 
@@ -236,6 +235,56 @@ class routerTest extends BuildrTestCase {
 
         //Attaching
         $map->attach('articles', '/articles', function(RouteMap $map) {});
+
+        //Route prototype changes
+        $map->extras(['key' => 'value']);
+        $prototype = $this->getPrivatePropertyFromClass(RouteMap::class, 'routePrototype', $map);
+        $this->assertEquals(['key' => 'value'], $prototype->extras);
+    }
+
+    public function testUrlGeneratorWorksCorrectly() {
+        $map = $this->router->getMap();
+        $generator = $this->router->getGenerator();
+
+        $map->get('article.read', '/article/{id}{format}{/version,index}', function() {})
+            ->tokens([
+                'id' => '\d+',
+                'format' => '(\.[^/]+)?',
+                'version' => '\d{2}',
+                'index' => '\d{2}',
+            ])
+            ->defaults([
+                'format' => '.html',
+            ]);
+
+        $map->get('wildcard', '/read', function() {})
+            ->wildcard('attributes');
+
+        $map->get('contact', '/contact', function() {})
+            ->secure(TRUE);
+
+        $map->get('colleague', '/colleague/{name}', function() {})
+            ->tokens([
+                'name' => '\.{8,16}',
+            ]);
+
+        //Simple
+        $urlSimple = $generator->generate('article.read', ['id' => 15, 'version' => 2]);
+        $this->assertEquals('http://test.tld/article/15.html/2', $urlSimple);
+
+        //Simple with secure
+        $urlSimpleSecure = $generator->generate('contact');
+        $this->assertEquals('https://test.tld/contact', $urlSimpleSecure);
+
+        //Wildcard route
+        $urlWildcard = $generator->generate('wildcard', ['attributes' => ['test', 'with', 'many', 'params']]);
+        $this->assertEquals('http://test.tld/read/test/with/many/params', $urlWildcard);
+
+        //Complex with, and without encoding
+        $urlComplexEncoded = $generator->generate('colleague', ['name' => 'Péter Doe']);
+        $urlComplexRaw = $generator->generateRaw('colleague', ['name' => 'Péter Doe']);
+        $this->assertEquals('http://test.tld/colleague/Péter Doe', $urlComplexRaw);
+        $this->assertEquals('http://test.tld/colleague/P%C3%A9ter%20Doe', $urlComplexEncoded);
     }
 
 

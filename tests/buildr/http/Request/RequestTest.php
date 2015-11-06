@@ -142,7 +142,7 @@ class RequestTest extends BuildRTestCase {
 
         //Defaults
         $resultDefaults = call_user_func_array($closure, [$defaults]);
-        $expectationDefault = ['Host' => 'http://test.tld', 'Https' => 1];
+        $expectationDefault = ['Host' => 'test.tld', 'Https' => 1];
 
         $this->assertCount(2, $resultDefaults);
         $this->assertEquals($expectationDefault, $resultDefaults);
@@ -162,7 +162,7 @@ class RequestTest extends BuildRTestCase {
     public static function getDefaultData() {
         return [
             'server' => [
-                'HTTP_HOST' => 'http://test.tld',
+                'HTTP_HOST' => 'test.tld',
                 'HTTP_HTTPS' => 1,
                 'HTTP_COOKIE' => 'dummyCookie',
                 'SERVER_PORT' => 80,

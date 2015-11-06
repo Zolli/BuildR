@@ -140,9 +140,12 @@ class UrlGenerator {
         $this->url = '//' . $host . $this->url;
         $secure = $this->route->secure;
 
+        //This cannot be happen
+        //@codeCoverageIgnoreStart
         if($secure === NULL) {
             $secure = $this->request->isSecure();
         }
+        //@codeCoverageIgnoreEnd
 
         $protocol = $secure ? 'https:' : 'http:';
         $this->url = $protocol . $this->url;
