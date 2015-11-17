@@ -34,7 +34,7 @@ return [
 
         'domains' => [
             'testing'       => ['test.domain'], //Don't remove. Its used on unit testing
-            'production'    => ['prod.domain'],
+            'production'    => ['dev.buildr-framework.io'],
             'development'   => ['buildr.zolli.hu'],
         ],
     ],

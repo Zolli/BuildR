@@ -30,8 +30,6 @@ class UnitTestingInitializer extends BaseInitializer {
      * @return bool
      */
     public function initialize($basePath, classLoader $autoloader) {
-        BuildrEnvironment::isRunningUnitTests();
-
         $PSR4Loader = $autoloader->getLoaderByName(PSR4ClassLoader::NAME)[0];
         $testsPath = realpath($basePath . DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR . 'buildr') .
                                 DIRECTORY_SEPARATOR;

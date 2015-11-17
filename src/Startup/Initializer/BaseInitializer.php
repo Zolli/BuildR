@@ -1,5 +1,6 @@
 <?php namespace buildr\Startup\Initializer;
 
+use buildr\Startup\BuildrEnvironment;
 use buildr\Startup\Initializer\InitializerInterface;
 use buildr\Application\Application;
 use buildr\Config\Config;
@@ -55,6 +56,7 @@ class BaseInitializer implements InitializerInterface {
      * @return bool
      */
     public function initialize($basePath, classLoader $autoloader) {
+        BuildrEnvironment::detectEnvironment();
         $this->registerServiceProviders();
     }
 

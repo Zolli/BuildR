@@ -1,5 +1,10 @@
 <?php
 
+//Define a constant that indicates unit testing
+if(!defined('BUILDR_RUNNING_TESTS')) {
+    define('BUILDR_RUNNING_TESTS', 1);
+}
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 

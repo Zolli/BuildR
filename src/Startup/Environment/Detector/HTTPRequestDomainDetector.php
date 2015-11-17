@@ -28,11 +28,9 @@ class HTTPRequestDomainDetector implements DetectorInterface {
         $envDetectionConfig = Config::getEnvDetectionConfig();
         $currentDomain = $_SERVER['HTTP_HOST'];
 
-        foreach ($envDetectionConfig['domains'] as $env => $domains) {
-            foreach ($domains as $domain) {
-                if($domain == $currentDomain) {
-                    return $env;
-                }
+        foreach($envDetectionConfig['domains'] as $env => $domains) {
+            if(($result = array_search($currentDomain, $domains)) !== FALSE) {
+                return $env;
             }
         }
 

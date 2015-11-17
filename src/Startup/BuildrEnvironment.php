@@ -74,6 +74,12 @@ class BuildrEnvironment {
      */
     public static final function detectEnvironment($callback = NULL) {
         $consoleArgs = (isset($_SERVER['argv'])) ? $_SERVER['argv'] : NULL;
+        $runningTest = defined('BUILDR_RUNNING_TESTS');
+
+        if($runningTest === TRUE) {
+            self::isRunningUnitTests();
+            return;
+        }
 
         if(!($callback instanceof \Closure)) {
             $envConfig = Config::getEnvDetectionConfig();
@@ -84,6 +90,13 @@ class BuildrEnvironment {
         self::$isInitialized = TRUE;
     }
 
+    /**
+     * Function to manually override or set the environment
+     *
+     * @param string $environmentString
+     *
+     * @throws \buildr\Startup\Environment\Detector\EnvironmentException
+     */
     public static function setEnv($environmentString) {
         if(!is_string($environmentString)) {
             throw new EnvironmentException("The setEnv() function must be take a string as argument!");

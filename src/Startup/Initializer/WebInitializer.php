@@ -40,9 +40,6 @@ class WebInitializer extends BaseInitializer {
             Bootup::initMbstring();
         }
 
-        //Environment detection
-        BuildrEnvironment::detectEnvironment();
-
         //Register additional providers, that exist only in web requests
         $this
             ->addProvider(RequestServiceProvider::class)
