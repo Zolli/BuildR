@@ -1,4 +1,4 @@
-<?php namespace buildr\Application\Core\Http;
+<?php namespace buildr\Application\Web\Core\Http;
 
 use buildr\Application\Application;
 use buildr\Contract\Application\ApplicationRoutingContract;

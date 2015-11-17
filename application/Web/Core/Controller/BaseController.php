@@ -1,4 +1,4 @@
-<?php namespace buildr\Application\Core\Controller;
+<?php namespace buildr\Application\Web\Core\Controller;
 
 use buildr\Http\Request\RequestInterface;
 use buildr\Http\Response\ResponseInterface;

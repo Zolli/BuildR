@@ -22,8 +22,14 @@ return [
      * Application Configuration
      */
     'application' => [
-        'location'          => '/application',
-        'namespaceName'     => 'buildr\\Application\\'
+        'web' => [
+            'location'          => '/application/Web',
+            'namespaceName'     => 'buildr\\Application\\Web\\',
+        ],
+        'console' => [
+            'location' => '/application/Console',
+            'namespaceName' => 'buildr\\Application\\Console\\',
+        ],
     ],
 
     /**
